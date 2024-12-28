@@ -153,3 +153,24 @@ html.dark {
         -webkit-text-stroke: 2px white;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .nav-links .text {
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+        line-height: 35px;
+        height: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        background: transparent;
+        border-radius: 0 0 0 0;
+    }
+
+    .text .block:last-child {
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+    }
+}
