@@ -9,9 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.0.0",
     "@astrojs/preact": "^4.0.1",
     "@astrojs/rss": "^4.0.10",
+    "@astrojs/vue": "^5.0.3",
     "astro": "^5.1.1",
-    "preact": "^10.25.4"
+    "preact": "^10.25.4",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue": "^3.5.13",
+    "vuetify": "^3.7.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.14.0"
   }
 }
