@@ -1,11 +1,16 @@
 ---
 import Navigation from './Navigation.astro';
-import Hamburger from './Hamburger.astro';
----
 
-<header class="shadow sticky top-0 z-50">
+let overlay = true;
+---
+<div id="overlay" class="menu-overlay shadow absolute top-0">
     <nav>
-        <Hamburger/>
-        <Navigation/>
+        {overlay ? <Navigation /> : ''}
     </nav>
-</header>
+</div>
+
+<script>
+    function closeOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>

@@ -28,8 +28,9 @@ footer {
     width: 100%;
 }
 
-header {
+.menu-overlay {
     background-color: #0C1316;
+    width: 100%;
 }
 
 .hamburger {
@@ -49,22 +50,25 @@ header {
 .nav-links {
     width: 100%;
     height: 100vh;
-    background-color: #ff9776;
+    background-color: #0C1316;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: start;
 }
 
 .nav-links .text {
-    padding-top: 2rem;
     text-decoration: none;
     color: white;
-    width: 100%;
-    font-size: 100px;
+    font-size: 120px;
+    line-height: 140px;
+    height: 100px;
     font-weight: bold;
     text-transform: uppercase;
     overflow: hidden;
+    transition: .5s;
+    background: transparent;
+    border-radius: 0 0 0 0;
 }
 
 .nav-links .text:hover,
@@ -77,7 +81,8 @@ header {
 }
 
 .text .block:last-child {
-    color: #0C1316;
+    color: transparent;
+    -webkit-text-stroke: 5px white;
 }
 
 .text .letter {
@@ -89,16 +94,34 @@ header {
     transition-delay: 0s;
 }
 .letter:nth-child(2) {
-    transition-delay: 0.03s;
+    transition-delay: 0.02s;
 }
 .letter:nth-child(3) {
-    transition-delay: 0.06s;
+    transition-delay: 0.04s;
 }
 .letter:nth-child(4) {
-    transition-delay: 0.09s;
+    transition-delay: 0.08s;
 }
 .letter:nth-child(5) {
+    transition-delay: 0.1s;
+}
+.letter:nth-child(6) {
     transition-delay: 0.12s;
+}
+.letter:nth-child(7) {
+    transition-delay: 0.14s;
+}
+.letter:nth-child(8) {
+    transition-delay: 0.16s;
+}
+.letter:nth-child(9) {
+    transition-delay: 0.18s;
+}
+.letter:nth-child(10) {
+    transition-delay: 0.2s;
+}
+.letter:nth-child(11) {
+    transition-delay: 0.22s;
 }
 
 html.dark {
@@ -108,4 +131,25 @@ html.dark {
 
 .dark .nav-links a {
     color: #fff;
+}
+
+@media screen and (max-width: 930px) {
+    .nav-links .text {
+        text-decoration: none;
+        color: white;
+        font-size: 50px;
+        line-height: 60px;
+        height: 45px;
+        font-weight: bold;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        background: transparent;
+        border-radius: 0 0 0 0;
+    }
+
+    .text .block:last-child {
+        color: transparent;
+        -webkit-text-stroke: 2px white;
+    }
 }
