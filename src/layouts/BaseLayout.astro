@@ -18,39 +18,46 @@ let happy = false;
 <body>
 <div id="app">
     <div id="header"
-         style="opacity: 0; pointer-events: none; transform: translateY(-100%); transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1);"
+         style="opacity: 1; pointer-events: none;transform: translateY(-100%); transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1); border-radius: 0 0 0 100%"
          class="menu-overlay shadow absolute top-0">
-
         <div class="nav-links">
-            <button id="closeButton" class="text-white absolute top-10 right-10 close-icon">
+            <!--<button id="closeButton" class="text-white absolute top-10 right-10 close-icon">
                 <i class="fa-solid fa-xmark" style="font-size: 2rem; position: absolute;"/>
                 <i class="fa-solid fa-angle-up" style="font-size: 2rem; position: absolute;"/>
-            </button>
+            </button>-->
             <a href="/" class="text">Accueil</a>
             <a href="/about/" class="text">Compétences</a>
             <a href="/blog/" class="text">Projets</a>
             <a href="/tags/" class="text">Autres</a>
         </div>
     </div>
-    <button id="openButton">Coucou</button>
+    <button id="openButton" class="text-white absolute top-10 right-10 close-icon" style="transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1); width: 28px; height: 32px">
+        <i class="fa-solid fa-bars" style="font-size: 2rem; position: absolute; top: 0 ; left: 0 ;"/>
+        <i class="fa-solid fa-angle-up" style="font-size: 2rem; position: absolute; top: 0 ; left: 0 ;"/>
+    </button>
+    <div>.</div>
 </div>
 <script>
     const header = document.getElementById('header');
     const openButton = document.getElementById('openButton');
     const closeButton = document.getElementById('closeButton');
+    let overlay = false;
 
     // Open the header
     openButton.addEventListener('click', () => {
-        header.style.opacity = '1';
-        header.style.pointerEvents = 'auto'; // Allow interaction
-        header.style.transform = 'translateY(0%)';
-    });
+        overlay = !overlay;
+        if (overlay) {
+            header.style.pointerEvents = 'auto'; // Allow interaction
+            header.style.transform = 'translateY(0%)';
+            header.style.borderRadius = '0';
+            openButton.style.transform = 'rotate(180deg)';
+        } else {
+            header.style.pointerEvents = 'none'; // Disable interaction
+            header.style.transform = 'translateY(-100%)';
+            header.style.borderRadius = '0 0 0 100%';
+            openButton.style.transform = 'rotate(0deg)';
+        }
 
-    // Close the header
-    closeButton.addEventListener('click', () => {
-        header.style.opacity = '0';
-        header.style.pointerEvents = 'none'; // Disable interaction
-        header.style.transform = 'translateY(-100%)';
     });
 
     // Handle text animation

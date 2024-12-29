@@ -7,6 +7,7 @@ body {
     margin: 0;
     width: 100%;
     min-height: 100vh;
+    background: #212A2C;
 }
 
 * {
@@ -39,18 +40,18 @@ footer {
 
 .close-icon:hover i:nth-child(1){
     opacity: 0;
-    transform: rotate(45deg);
+    transform: scale(0) rotate(45deg);
 }
 
 .close-icon i:nth-child(2) {
     transition: 0.5s cubic-bezier(0.76, 0, 0.024, 1);
-    transform: scale(.8) rotate(-45deg) translateY(4px);
+    transform: scale(.1) rotate(-135deg) translateY(4px);
     opacity: 0;
 }
 
 .close-icon:hover i:nth-child(2){
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(-180deg);
 }
 
 .nav-links {
@@ -60,7 +61,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: end;
+    border-radius: inherit;
 }
 
 .nav-links .text {
