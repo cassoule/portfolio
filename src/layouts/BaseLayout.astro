@@ -3,6 +3,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const { pageTitle }= Astro.props
+
+let happy = false;
 ---
 <html lang="en">
 <head>
@@ -14,7 +16,73 @@ const { pageTitle }= Astro.props
     <title>{pageTitle}</title>
 </head>
 <body>
-<Header />
-<slot/>
+<div id="app">
+    <div id="header"
+         style="opacity: 0; pointer-events: none; transform: translateY(-100%); transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1);"
+         class="menu-overlay shadow absolute top-0">
+
+        <div class="nav-links">
+            <button id="closeButton" class="text-white absolute top-10 right-10 close-icon">
+                <i class="fa-solid fa-xmark" style="font-size: 2rem; position: absolute;"/>
+                <i class="fa-solid fa-angle-up" style="font-size: 2rem; position: absolute;"/>
+            </button>
+            <a href="/" class="text">Accueil</a>
+            <a href="/about/" class="text">Compétences</a>
+            <a href="/blog/" class="text">Projets</a>
+            <a href="/tags/" class="text">Autres</a>
+        </div>
+    </div>
+    <button id="openButton">Coucou</button>
+</div>
+<script>
+    const header = document.getElementById('header');
+    const openButton = document.getElementById('openButton');
+    const closeButton = document.getElementById('closeButton');
+
+    // Open the header
+    openButton.addEventListener('click', () => {
+        header.style.opacity = '1';
+        header.style.pointerEvents = 'auto'; // Allow interaction
+        header.style.transform = 'translateY(0%)';
+    });
+
+    // Close the header
+    closeButton.addEventListener('click', () => {
+        header.style.opacity = '0';
+        header.style.pointerEvents = 'none'; // Disable interaction
+        header.style.transform = 'translateY(-100%)';
+    });
+
+    // Handle text animation
+    let elements = document.querySelectorAll(".text");
+
+    elements.forEach((element) => {
+        let innerText = element.innerText;
+        element.innerHTML = "";
+
+        let textContainer = document.createElement("div");
+        textContainer.classList.add("block");
+
+        for (let letter of innerText) {
+            let span = document.createElement("span");
+            span.innerText = letter.trim() === ""
+                ? "\xa0"
+                : letter;
+            span.classList.add("letter");
+            textContainer.appendChild(span);
+        }
+
+        element.appendChild(textContainer);
+        element.appendChild(textContainer.cloneNode(true));
+    });
+
+    elements.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+            element.classList.remove("play");
+        });
+    });
+</script>
+<script src="https://kit.fontawesome.com/1d8b63688b.js" crossorigin="anonymous"></script>
+<slot />
 </body>
 </html>

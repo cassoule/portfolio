@@ -1,16 +1,7 @@
 ---
-import Navigation from './Navigation.astro';
-
-let overlay = true;
 ---
-<div id="overlay" class="menu-overlay shadow absolute top-0">
-    <nav>
-        {overlay ? <Navigation /> : ''}
-    </nav>
-</div>
+
 
 <script>
-    function closeOverlay() {
-        document.getElementById('overlay').style.display = 'none';
-    }
+
 </script>
