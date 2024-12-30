@@ -19,7 +19,7 @@ let happy = false;
 <div id="app">
     <div id="header"
          style="opacity: 1; pointer-events: none;transform: translateY(-100%); transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1); border-radius: 0 0 0 100%; z-index: 9;"
-         class="menu-overlay shadow absolute top-0">
+         class="menu-overlay shadow fixed top-0">
         <div class="nav-links">
             <!--<button id="closeButton" class="text-white absolute top-10 right-10 close-icon">
                 <i class="fa-solid fa-xmark" style="font-size: 2rem; position: absolute;"/>
@@ -39,7 +39,7 @@ let happy = false;
 <script>
     const header = document.getElementById('header');
     const openButton = document.getElementById('openButton');
-    const closeButton = document.getElementById('closeButton');
+    const body = document.getElementsByTagName('body')[0];
     let overlay = false;
 
     // Open the header
@@ -50,11 +50,13 @@ let happy = false;
             header.style.transform = 'translateY(0%)';
             header.style.borderRadius = '0';
             openButton.style.transform = 'rotate(180deg)';
+            body.style.overflowY = 'hidden';
         } else {
             header.style.pointerEvents = 'none'; // Disable interaction
             header.style.transform = 'translateY(-100%)';
             header.style.borderRadius = '0 0 0 100%';
             openButton.style.transform = 'rotate(0deg)';
+            body.style.overflowY = 'initial';
         }
 
     });
