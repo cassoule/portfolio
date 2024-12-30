@@ -3,7 +3,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
 import HockeyTeamItem from "../components/HockeyTeamItem.vue";
 const pageTitle = "Home Page";
+const birth = new Date('2004-07-23');
+const today = new Date();
+
+let age = today.getFullYear() - birth.getFullYear();
+
+const hasBirthPassed = (today.getMonth() > birth.getMonth()) ||
+    (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate());
+
+if (!hasBirthPassed) {
+    age--;
+}
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <h1>{pageTitle}</h1>
+    <section class="home">
+        <div class="home-img">
+            <img src="src/assets/photo.jpg" alt="img">
+        </div>
+        <div class="home-content">
+            <h1><span>Milo</span> Gourvest</h1>
+            <h3 class="typing-text">Je suis <span></span></h3>
+            <p>Je m'appelle Milo Gourvest, j'ai {age} ans.
+                Je suis actuellement alternant en 3e année de BUT Informatique à l'IUT de Lannion et en tant que développeur web full stack.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"/> </a>
+                <a href="#"><i class="fa-brands fa-github"/> </a>
+                <a href="#"><i class="fas fa-envelope"/> </a>
+            </div>
+            <a href="#" class="btn">Hire me</a>
+        </div>
+    </section>
 </BaseLayout>
