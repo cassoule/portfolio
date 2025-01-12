@@ -25,10 +25,10 @@ let happy = false;
                 <i class="fa-solid fa-xmark" style="font-size: 2rem; position: absolute;"/>
                 <i class="fa-solid fa-angle-up" style="font-size: 2rem; position: absolute;"/>
             </button>-->
-            <a href="/" class="text">Accueil</a>
-            <a href="/about/" class="text">Compétences</a>
-            <a href="/blog/" class="text">Projets</a>
-            <a href="/tags/" class="text">Autres</a>
+            <a href="#top" class="text" id="accueilBtn">Accueil</a>
+            <a href="#experience" class="text" id="experienceBtn">Experience</a>
+            <a href="#projets" class="text" id="projetsBtn">Projets</a>
+            <a href="#surmoi" class="text" id="surmoiBtn">Sur moi</a>
         </div>
     </div>
     <button id="openButton" class="text-white absolute top-10 right-10 close-icon" style="transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1); width: 28px; height: 32px; z-index: 10;">
@@ -41,6 +41,47 @@ let happy = false;
     const openButton = document.getElementById('openButton');
     const body = document.getElementsByTagName('body')[0];
     let overlay = false;
+
+    const accueilBtn = document.getElementById('accueilBtn');
+    const experienceBtn = document.getElementById('experienceBtn');
+    const projetsBtn = document.getElementById('projetsBtn');
+    const surmoiBtn = document.getElementById('surmoiBtn');
+
+    accueilBtn.addEventListener('click', () => {
+        overlay = false;
+        header.style.pointerEvents = 'none'; // Disable interaction
+        header.style.transform = 'translateY(-100%)';
+        header.style.borderRadius = '0 0 0 100%';
+        openButton.style.transform = 'rotate(0deg)';
+        body.style.overflowY = 'initial';
+    })
+
+    experienceBtn.addEventListener('click', () => {
+        overlay = false;
+        header.style.pointerEvents = 'none'; // Disable interaction
+        header.style.transform = 'translateY(-100%)';
+        header.style.borderRadius = '0 0 0 100%';
+        openButton.style.transform = 'rotate(0deg)';
+        body.style.overflowY = 'initial';
+    })
+
+    projetsBtn.addEventListener('click', () => {
+        overlay = false;
+        header.style.pointerEvents = 'none'; // Disable interaction
+        header.style.transform = 'translateY(-100%)';
+        header.style.borderRadius = '0 0 0 100%';
+        openButton.style.transform = 'rotate(0deg)';
+        body.style.overflowY = 'initial';
+    })
+
+    surmoiBtn.addEventListener('click', () => {
+        overlay = false;
+        header.style.pointerEvents = 'none'; // Disable interaction
+        header.style.transform = 'translateY(-100%)';
+        header.style.borderRadius = '0 0 0 100%';
+        openButton.style.transform = 'rotate(0deg)';
+        body.style.overflowY = 'initial';
+    })
 
     // Open the header
     openButton.addEventListener('click', () => {
@@ -58,7 +99,6 @@ let happy = false;
             openButton.style.transform = 'rotate(0deg)';
             body.style.overflowY = 'initial';
         }
-
     });
 
     // Handle text animation
