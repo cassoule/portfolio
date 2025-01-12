@@ -158,8 +158,8 @@ section {
 
 .home {
     display: flex;
-    justify-content: end;
-    align-items: start;
+    justify-content: start;
+    align-items: center;
     gap: 8rem;
     position: relative;
 }
@@ -394,12 +394,12 @@ h4 {
 }
 
 @media (max-width: 995px) {
-    .home {
-        flex-direction: column;
+    #accueil {
+        flex-direction: column !important;
     }
 
-    .home-content {
-        transform: translateY(-100%);
+    #accueil .home-content {
+        transform: translateY(30%);
     }
 
     .home .home-content h3 {
@@ -464,8 +464,8 @@ h4 {
 }
 
 @media screen and (max-width: 650px) {
-    .home-content {
-        transform: translateY(-50%);
+    #accueil .home-content {
+        transform: translateY(50%);
     }
     .nav-links .text {
         text-decoration: none;
