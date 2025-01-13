@@ -11,14 +11,14 @@ body {
     margin: 0;
     width: 100%;
     min-height: 100vh;
-    background: #212A2C;
+    background: #0C1316;
     color: white;
     overflow-x: hidden;
 }
 
 * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     /*transition: .3s;*/
 }
 
@@ -152,14 +152,14 @@ footer {
 
 
 section {
-    min-height: 100vh;
+    height: 150vh;
     padding: 5rem 9% 5rem;
 }
 
 .home {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     gap: 8rem;
     position: relative;
 }
@@ -204,6 +204,10 @@ h4 {
 
 .home-content p {
     font-size: 1.6rem;
+}
+
+.home .home-content li p {
+    font-size: 1rem;
 }
 
 
@@ -396,10 +400,11 @@ h4 {
 @media (max-width: 995px) {
     #accueil {
         flex-direction: column !important;
+        transform: translateY(-10%);
     }
 
     #accueil .home-content {
-        transform: translateY(30%);
+        transform: translateY(15%);
     }
 
     .home .home-content h3 {
@@ -464,8 +469,13 @@ h4 {
 }
 
 @media screen and (max-width: 650px) {
+    #accueil {
+        flex-direction: column !important;
+        transform: translateY(-10%);
+    }
+
     #accueil .home-content {
-        transform: translateY(20%);
+        transform: translateY(15%);
     }
     .nav-links .text {
         text-decoration: none;
@@ -492,5 +502,29 @@ h4 {
 
     .home .home-content h1 {
         font-size: 3.5rem;
+    }
+
+    .home .home-content h2 {
+        font-size: 2rem;
+    }
+
+    .home .home-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .home .home-content li p {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        background-color: transparent;
+        border: .2rem solid var(--primary-color);
+        font-size: 1.5rem;
+        border-radius: 50%;
+        margin: 3rem 1.5rem 3rem 0;
+        transition: .3s ease;
+        color: var(--primary-color);
     }
 }
