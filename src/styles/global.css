@@ -190,7 +190,7 @@ footer {
 
 
 section {
-    height: 150vh;
+    min-height: 150vh;
     padding: 5rem 9% 5rem;
 }
 
