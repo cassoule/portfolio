@@ -16,6 +16,12 @@ let happy = false;
     <title>{pageTitle}</title>
 </head>
 <body>
+<div class="progress-container">
+    <p class="texts">Experience</p>
+    <p class="texts">Projets</p>
+    <p class="texts">Sur moi</p>
+    <div class="progress-bar" id="myBar"></div>
+</div>
 <div id="app">
     <div id="header"
          style="opacity: 1; pointer-events: none;transform: translateY(-100%); transition: 0.6s cubic-bezier(0.76, 0, 0.024, 1); border-radius: 0 0 0 100%; z-index: 9;"
@@ -36,6 +42,7 @@ let happy = false;
         <i class="fa-solid fa-angle-up" style="font-size: 2rem; position: absolute; top: 0 ; left: 0 ;"/>
     </button>
 </div>
+<slot />
 <script>
     const header = document.getElementById('header');
     const openButton = document.getElementById('openButton');
@@ -129,8 +136,21 @@ let happy = false;
             element.classList.remove("play");
         });
     });
+
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.height = scrolled + "vh";
+        if (scrolled >= 23) {
+            document.querySelector('.texts:nth-child(1)').style.color = "black";
+        } else {
+            document.querySelector('.texts:nth-child(1)').style.color = "white";
+        }
+    }
 </script>
 <script src="https://kit.fontawesome.com/1d8b63688b.js" crossorigin="anonymous"></script>
-<slot />
 </body>
 </html>
