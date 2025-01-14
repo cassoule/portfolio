@@ -238,11 +238,11 @@ section {
 .projectContainer {
     display: flex;
     gap: 2rem;
-    /*flex-wrap: wrap;*/
+    width: 90vw;
 }
 
 .projectCard {
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 1rem;
     border: 2px solid #212A2C;
     padding: .75rem 1.5rem 1.5rem 1.5rem;
@@ -349,7 +349,7 @@ section {
     }
 
     .projectCard {
-
+        margin-right: 2rem;
     }
 }
 
@@ -365,8 +365,6 @@ h4 {
 .home .home-content li p {
     font-size: 1rem;
 }
-
-
 
 .home-img img {
     position: relative;
