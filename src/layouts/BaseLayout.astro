@@ -17,9 +17,9 @@ let happy = false;
 </head>
 <body>
 <div class="progress-container">
-    <p class="texts">Experience</p>
-    <p class="texts">Projets</p>
-    <p class="texts">Sur moi</p>
+    <a href="#experience" class="texts">Experience</a>
+    <a href="#projets" class="texts">Projets</a>
+    <a href="#surmoi" class="texts">Sur moi</a>
     <div class="progress-bar" id="myBar"></div>
 </div>
 <div id="app">
@@ -144,10 +144,20 @@ let happy = false;
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.height = scrolled + "vh";
-        if (scrolled >= 23) {
-            document.querySelector('.texts:nth-child(1)').style.color = "black";
+        if (scrolled >= 20 && scrolled < 50) {
+            document.querySelector('.texts:nth-child(1)').style.color = 'white';
         } else {
-            document.querySelector('.texts:nth-child(1)').style.color = "white";
+            document.querySelector('.texts:nth-child(1)').style.color = "#212A2C";
+        }
+        if (scrolled >= 50 && scrolled < 80) {
+            document.querySelector('.texts:nth-child(2)').style.color = 'white';
+        } else {
+            document.querySelector('.texts:nth-child(2)').style.color = "#212A2C";
+        }
+        if (scrolled >= 80) {
+            document.querySelector('.texts:nth-child(3)').style.color = 'white';
+        } else {
+            document.querySelector('.texts:nth-child(3)').style.color = "#212A2C";
         }
     }
 </script>
