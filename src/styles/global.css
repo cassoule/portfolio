@@ -896,17 +896,23 @@ h4 {
         font-size: 1rem;
     }
 
-    /*.social-icons a {
+    .social-icons a {
         width: 3rem;
         height: 3rem;
-        background-color: transparent;
-        border: .2rem solid var(--primary-color);
-        font-size: 1.5rem;
-        border-radius: 50%;
-        margin: 3rem 1.5rem 3rem 0;
-        transition: .3s ease;
-        color: var(--primary-color);
-    }*/
+        font-size: 1rem;
+        padding-left: .95rem;
+        border-radius: 1rem;
+        margin: 3rem .5rem 3rem 0;
+    }
+    .social-icons a:nth-child(1):hover {
+        width: 135px;
+    }
+    .social-icons a:nth-child(2):hover {
+        width: 125px;
+    }
+    .social-icons a:nth-child(3):hover {
+        width: 115px;
+    }
 
     .progress-container .texts {
         display: none;
@@ -919,5 +925,10 @@ h4 {
     .doubleImgContainer .imgContainer:nth-child(2) {
         width: 70px;
         height: 90px;
+    }
+
+    .othersContainer:nth-child(2) .othersCard:nth-child(2) {
+        max-width: 350px;
+        min-width: unset;
     }
 }
