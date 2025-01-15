@@ -373,6 +373,7 @@ section {
 .othersContainer:nth-child(2) .othersCard:nth-child(2) {
     width: 350px;
     min-width: 350px;
+    background-color: #212A2C;
 }
 
 .projectCard:hover, .othersCard:hover {
@@ -490,7 +491,7 @@ section {
     border: 2px solid #f1f5f9;
 }
 
-.othersCard:nth-child(2):hover .lBtn {
+.othersCard:nth-child(2) .lBtn {
     border: 2px solid #f1f5f911;
 }
 
@@ -573,24 +574,66 @@ h4 {
 }
 
 .social-icons a {
+    position: relative;
     z-index: 1;
     display: inline-flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 4rem;
     height: 4rem;
-    background-color: transparent;
-    border: .2rem solid var(--primary-color);
-    font-size: 2rem;
-    border-radius: 50%;
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
     margin: 3rem 1.5rem 3rem 0;
-    transition: .3s ease;
-    color: var(--primary-color);
+    padding-left: 1.25rem;
+    transition: 1s ease;
+    color: #f1f5f9CC;
+    overflow: hidden;
+    gap: 1.2rem;
+    max-width: unset;
 }
 
-.social-icons a:hover {
-    color: #212A2C;
-    background-color: var(--primary-color);
+.social-icons a:nth-child(1):hover {
+    color: #f1f5f9;
+    width: 180px;
+}
+.social-icons a:nth-child(2):hover {
+    color: #f1f5f9;
+    width: 170px;
+}
+.social-icons a:nth-child(3):hover {
+    color: #f1f5f9;
+    width: 150px;
+}
+
+.social-icons a::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.social-icons a:nth-child(1) {
+    border: 2px solid #0A66C222;
+    background: radial-gradient(transparent 50%, #0A66C222);
+}
+.social-icons a:nth-child(2) {
+    border: 2px solid #8F32FE22;
+    background: radial-gradient(transparent 50%, #8F32FE22);
+}
+.social-icons a:nth-child(3) {
+    border: 2px solid #D4463833;
+    background: radial-gradient(transparent 50%, #D4463833);
+}
+.social-icons a:nth-child(1)::before {
+    background: radial-gradient(transparent 50%, #0A66C222);
+}
+.social-icons a:nth-child(2)::before {
+    background: radial-gradient(transparent 50%, #8F32FE22);
+}
+.social-icons a:nth-child(3)::before {
+    background: radial-gradient(transparent 50%, #D4463833);
 }
 
 .btn {
@@ -853,7 +896,7 @@ h4 {
         font-size: 1rem;
     }
 
-    .social-icons a {
+    /*.social-icons a {
         width: 3rem;
         height: 3rem;
         background-color: transparent;
@@ -863,7 +906,7 @@ h4 {
         margin: 3rem 1.5rem 3rem 0;
         transition: .3s ease;
         color: var(--primary-color);
-    }
+    }*/
 
     .progress-container .texts {
         display: none;
