@@ -293,6 +293,13 @@ section {
     align-items: center;
 }
 
+.pro-detail-text {
+    color: #f1f5f9 !important;
+    border: 1px solid white !important;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
 .balisesComp {
     display: flex;
     gap: 1.5rem;
